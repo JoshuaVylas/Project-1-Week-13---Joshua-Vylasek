@@ -115,9 +115,13 @@ setup.kibana:
 - In /etc/ansible/hosts edit The webservers and elk ip addresses with private IPs of our web machines and elk to match the following:
 
 [webservers] 
+
 10.0.0.5 ansible_python_interpreter=/usr/bin/python3
+
 10.0.0.6 ansible_python_interpreter=/usr/bin/python3
+
 [elk]
+
 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
 
 
