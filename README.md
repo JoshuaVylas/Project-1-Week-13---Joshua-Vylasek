@@ -7,18 +7,21 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the YML file may be used to install only certain pieces of it, such as Filebeat.
 
-The following: Will install Elk
+We will use Ansible yml files to automate this task
+Here is a quick run down of the following:
+
+The following: Will install ELK. ELK is a combination of programs that will help us monitor out systems and data.
   - Project-1-Week-13---Joshua-Vylasek/Ansible/Install-Elk.yml 
 
 The following: Will install Filebeat on web servers so we can gather log data
   - Project-1-Week-13---Joshua-Vylasek/Ansible/Filebeat-Playbook.yml
 
-The following: Will | Will install metricbeat so we can can keep an eye on our processes.
+The following: Will | Will install metricbeat on web servers so we can can keep an eye on our processes.
   - Project-1-Week-13---Joshua-Vylasek/Ansible/Metricbeat-Playbook.yml
   
 
 This document contains the following details:
-- Description of the Topologu
+- Description of the Topology
 - Access Policies
 - ELK Configuration
   - Beats in Use
@@ -31,7 +34,7 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
-- Load Balances protect the availibity of the of the web servers, acting as a reverse proxy and distributes network or application traffic across a number of servers.
+- Load Balancers protect the availibity of the of the web servers, acting as a reverse proxy and distributes network or application traffic across a number of servers.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the event and system metrics.
 - Filebeat is a lightweight shipper for forwarding and centralizing log data. Installed as an agent on your servers, Filebeat monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing.
@@ -54,16 +57,17 @@ Only the Jumpbox machine can accept connections from the Internet. Access to thi
 - My personal IP address.
 
 Machines within the network can only be accessed by SSH.
-- The Elk-Server machine is only open through ssh from the Jumpbox and through web access from my Personal IP address
+- The Elk-Server machine is only open through ssh from the Jumpbox's ansible container and through web access from my Personal IP address
+- The web machines are only accessable through ssh from my Jumpbox's ansible container and personal IP
 
 A summary of the access policies in place can be found in the table below.
 
-| Name      | Publicly Accessible  | Allowed IP Addresses     |
-|---------- |--------------------- |----------------------    |
-| Jump Box  |No                    |Personal IP address       |
-| Web-1     |Yes with Load Balancer|10.0.0.4 ssh from Jumpbox |
-| Web-2     |Yes with Load Balancer|10.0.0.4 ssh from Jumpbox |
-| Elk-Server|No                    |10.0.0.4 ssh from jumpbox http port 5601 to personal IP|
+| Name      | Publicly Accessible            | Allowed IP Addresses                                  |
+|-----------|--------------------------------|-------------------------------------------------------|
+| Jump Box  |No                              |Personal IP address                                    |
+| Web-1     |Yes, but only with Load Balancer|10.0.0.4 ssh from Jumpbox                              |
+| Web-2     |Yes, but only with Load Balancer|10.0.0.4 ssh from Jumpbox                              |
+| Elk-Server|No                              |10.0.0.4 ssh from jumpbox http port 5601 to personal IP|
 
 ### Elk Configuration
 
