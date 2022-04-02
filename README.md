@@ -104,7 +104,7 @@ ssh into the control node and follow the steps below:
 
 - Copy the filebeat.config.yml, filebeat.yml, metricbeat.yml and metricbeat.config.yml file to /etc/anisble/.
 
-- Update the configuration files to include the Private IP of the ELK-VM to the Elasticsearch and Kibana IP and port number line to match the following:
+- Check that the configuration file includes the Private IP of the ELK-VM in the Elasticsearch and Kibana IP and port number line matching the following:
 output.elasticsearch:
 hosts: "10.1.0.4:9200"
   username: "elastic"
@@ -120,7 +120,12 @@ setup.kibana:
 [elk]
 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
 
-- Run the playbook, and navigate to the ELK-VM-PublicIP:5601/app/kibana to check that the installation worked as expected.
+
+Now we should be able to run the playbook using the two following commands:
+ansible-playbook filebeat.yml
+ansible-playbook metricbeat.yml
+
+- Run the playbooks, and navigate to the ELK-VM-PublicIP:5601/app/kibana to check that the installation worked as expected.
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
 Step by step commands from work station:
