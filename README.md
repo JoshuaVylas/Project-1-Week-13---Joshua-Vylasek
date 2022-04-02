@@ -9,8 +9,10 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
 The following: Will install Elk
   - Project-1-Week-13---Joshua-Vylasek/Ansible/Install-Elk.yml 
+
 The following: Will install Filebeat on web servers so we can gather log data
   - Project-1-Week-13---Joshua-Vylasek/Ansible/Filebeat-Playbook.yml
+
 The following: Will | Will install metricbeat so we can can keep an eye on our processes.
   - Project-1-Week-13---Joshua-Vylasek/Ansible/Metricbeat-Playbook.yml
   
