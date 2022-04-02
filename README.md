@@ -29,14 +29,13 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+- Load Balances protect the availibity of the of the web servers, acting as a reverse proxy and distributes network or application traffic across a number of servers.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the event and system metrics.
 - Filebeat is a lightweight shipper for forwarding and centralizing log data. Installed as an agent on your servers, Filebeat monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing.
 - Metricbeat takes the metrics and statistics that it collects and ships them to the output that you specify, such as Elasticsearch or Logstash.
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name     | Function | IP Address | Operating System        |
 |----------|----------|------------|------------------       |
@@ -76,7 +75,8 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-(Images/Elk_Stack)
+![image](https://user-images.githubusercontent.com/94200443/161395215-7af1bc14-af8d-424d-9d71-ebd5a18da926.png)
+
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
