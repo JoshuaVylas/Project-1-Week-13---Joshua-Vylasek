@@ -122,7 +122,9 @@ setup.kibana:
 
 
 Now we should be able to run the playbook using the two following commands:
+
 ansible-playbook filebeat.yml
+
 ansible-playbook metricbeat.yml
 
 - Run the playbooks, and navigate to the ELK-VM-PublicIP:5601/app/kibana to check that the installation worked as expected.
